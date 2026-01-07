@@ -6,13 +6,13 @@ import { vehicles } from '../../lib/data';
 
 export default function Automation() {
     const [enabled, setEnabled] = useState(true);
-    const [message, setMessage] = useState("Hi 👋\nThanks for contacting Ajmal Bikes.\nHere are the details you requested:");
+    const [message, setMessage] = useState("Hi 👋\nThanks for contacting Hari Priya.\nHere are the details you requested:");
     const vehicle = vehicles[0]; // For preview
 
     return (
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 font-sans">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 font-sans">
             <div className="space-y-6">
-                <div>
+                <div className="px-1 sm:px-0">
                     <h1 className="text-2xl font-bold text-gray-900">Automation Settings</h1>
                     <p className="text-sm text-gray-500">Configure how your WhatsApp bot responds to customers</p>
                 </div>
@@ -89,7 +89,7 @@ export default function Automation() {
                         <MessageSquare className="w-5 h-5" />
                     </div>
                     <div>
-                        <p className="font-bold text-sm">Ajmal Bikes Bot</p>
+                        <p className="font-bold text-sm">Hari Priya</p>
                         <p className="text-[10px] text-white/80">online</p>
                     </div>
                 </div>

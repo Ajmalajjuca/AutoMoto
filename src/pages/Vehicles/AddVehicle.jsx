@@ -146,15 +146,15 @@ export default function AddVehicle() {
                     </h2>
 
                     <div {...getRootProps()} className={cn(
-                        "border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-colors",
+                        "border-2 border-dashed rounded-xl p-4 sm:p-8 text-center cursor-pointer transition-colors",
                         isDragActive ? "border-blue-500 bg-blue-50" : "border-gray-300 hover:border-gray-400"
                     )}>
                         <input {...getInputProps()} />
-                        <div className="mx-auto w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-3">
-                            <Upload className="w-6 h-6" />
+                        <div className="mx-auto w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-3">
+                            <Upload className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
                         <p className="text-sm text-gray-600">
-                            <span className="font-medium text-blue-600">Click to upload</span> or drag and drop
+                            <span className="font-medium text-blue-600">Click to upload</span> <span className="hidden sm:inline">or drag and drop</span>
                         </p>
                         <p className="text-xs text-gray-400 mt-1">SVG, PNG, JPG or GIF (max. 5MB)</p>
                     </div>
@@ -172,7 +172,7 @@ export default function AddVehicle() {
                                     <button
                                         type="button"
                                         onClick={() => removeFile(file.name)}
-                                        className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                                        className="absolute top-2 right-2 p-1.5 bg-red-500 text-white rounded-full opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity shadow-sm"
                                     >
                                         <X className="w-4 h-4" />
                                     </button>
@@ -204,7 +204,7 @@ export default function AddVehicle() {
                                 <option>Sold</option>
                             </select>
                         </InputGroup>
-                        <div className="flex items-center gap-2 pt-6">
+                        <div className="flex items-center gap-2 pt-2 sm:pt-6">
                             <input type="checkbox" id="negotiable" className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500 bg-white" />
                             <label htmlFor="negotiable" className="text-sm text-gray-700">Price is Negotiable</label>
                         </div>
@@ -228,18 +228,18 @@ export default function AddVehicle() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex justify-end gap-3 pt-4">
+                <div className="flex flex-col-reverse sm:flex-row justify-end gap-3 pt-4">
                     <button
                         type="button"
                         onClick={() => navigate('/vehicles')}
-                        className="px-6 py-2.5 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium bg-white"
+                        className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 font-medium bg-white"
                     >
                         Cancel
                     </button>
                     <button
                         type="submit"
                         disabled={loading}
-                        className="flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium shadow-md shadow-blue-500/20 disabled:opacity-50 transition-colors"
+                        className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium shadow-md shadow-blue-500/20 disabled:opacity-50 transition-colors"
                     >
                         {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                         Save & Publish

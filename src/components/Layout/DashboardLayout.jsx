@@ -15,9 +15,11 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../lib/utils';
 
-const SidebarLink = ({ to, icon: Icon, children, collapsed }) => (
+const SidebarLink = ({ to, icon: Icon, children, collapsed, end, onClick }) => (
     <NavLink
         to={to}
+        end={end}
+        onClick={onClick}
         className={({ isActive }) =>
             cn(
                 "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group",
@@ -72,34 +74,34 @@ export default function DashboardLayout() {
                     <div className="px-3 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                         Overview
                     </div>
-                    <SidebarLink to="/dashboard" icon={LayoutDashboard}>
+                    <SidebarLink to="/dashboard" icon={LayoutDashboard} onClick={() => setSidebarOpen(false)}>
                         Dashboard
                     </SidebarLink>
 
                     <div className="px-3 mt-8 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                         Inventory
                     </div>
-                    <SidebarLink to="/vehicles/add" icon={PlusCircle}>
+                    <SidebarLink to="/vehicles/add" icon={PlusCircle} onClick={() => setSidebarOpen(false)}>
                         Add Vehicle
                     </SidebarLink>
-                    <SidebarLink to="/vehicles" icon={List}>
+                    <SidebarLink to="/vehicles" icon={List} end onClick={() => setSidebarOpen(false)}>
                         My Listings
                     </SidebarLink>
 
                     <div className="px-3 mt-8 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                         Sales & Leads
                     </div>
-                    <SidebarLink to="/leads" icon={Users}>
+                    <SidebarLink to="/leads" icon={Users} onClick={() => setSidebarOpen(false)}>
                         Enquiries
                     </SidebarLink>
-                    <SidebarLink to="/automation" icon={MessageSquare}>
+                    <SidebarLink to="/automation" icon={MessageSquare} onClick={() => setSidebarOpen(false)}>
                         WhatsApp Check
                     </SidebarLink>
 
                     <div className="px-3 mt-8 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
                         Settings
                     </div>
-                    <SidebarLink to="/settings" icon={Settings}>
+                    <SidebarLink to="/settings" icon={Settings} onClick={() => setSidebarOpen(false)}>
                         Settings
                     </SidebarLink>
                 </div>
@@ -133,7 +135,7 @@ export default function DashboardLayout() {
                                 AJ
                             </div>
                             <div className="hidden sm:block">
-                                <p className="text-sm font-medium text-gray-900">Ajmal Bikes</p>
+                                <p className="text-sm font-medium text-gray-900">Hari Priya</p>
                                 <p className="text-xs text-gray-500">Owner</p>
                             </div>
                         </div>

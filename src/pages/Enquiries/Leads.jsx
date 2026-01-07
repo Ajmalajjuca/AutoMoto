@@ -90,15 +90,15 @@ export default function Leads() {
                                         <StatusBadge status={lead.status} />
                                     </td>
                                     <td className="px-6 py-4 text-right">
-                                        <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <button className="p-1.5 hover:bg-green-100 text-green-600 rounded">
-                                                <MessageCircle className="w-4 h-4" />
+                                        <div className="flex items-center justify-end gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+                                            <button className="p-2 hover:bg-green-100 text-green-600 rounded transition-colors">
+                                                <MessageCircle className="w-5 h-5" />
                                             </button>
-                                            <button className="p-1.5 hover:bg-blue-100 text-blue-600 rounded">
-                                                <Phone className="w-4 h-4" />
+                                            <button className="p-2 hover:bg-blue-100 text-blue-600 rounded transition-colors">
+                                                <Phone className="w-5 h-5" />
                                             </button>
-                                            <button className="p-1.5 hover:bg-gray-100 text-gray-600 rounded">
-                                                <MoreHorizontal className="w-4 h-4" />
+                                            <button className="p-2 hover:bg-gray-100 text-gray-600 rounded transition-colors">
+                                                <MoreHorizontal className="w-5 h-5" />
                                             </button>
                                         </div>
                                     </td>
